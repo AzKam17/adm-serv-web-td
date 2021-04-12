@@ -2,18 +2,62 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {# Run `composer require symfony/webpack-encore-bundle`
-           and uncomment the following Encore helpers to start using Symfony UX #}
-        {% block stylesheets %}
-            {#{{ encore_entry_link_tags('app') }}#}
-        {% endblock %}
-
-        {% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
-        {% endblock %}
+        <title>Web App - Administration Serveur Web</title>
+        <link rel="stylesheet" href="/assets/css/bootstrap.css">
+        <script src="/assets/js/angular.js"></script>
+        <script src="/assets/js/angularjs-route.js"></script>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+            html *
+            {
+                font-family: lato !important;
+            }
+        </style>
+        {% block stylesheets %}{% endblock %}
+        {% block javascripts %}{% endblock %}
     </head>
-    <body>
-        {% block body %}{% endblock %}
+    <body ng-app="myApp" ng-controller="myCtrl">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Web App - Administration Serveur Web</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor02">
+            <ul class="navbar-nav  mx-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#!">Accueil
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#!verb">Test HTTP Verbs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#!">Test API Rest</a>
+                </li>
+            </ul>
+
+            <span class="navbar-text">
+                Made by <a href="mailto:azizkamadou17@gmail.com">KAMAGATE Amadou Aziz</a> - Developer and Web Artisan enthusiast 👷🛠️👨‍💻
+            </span>
+        </div>
+    </nav>
+
+    <div ng-view></div>
+
+    <script src="/assets/js/jquery.js"></script>
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+
+    <script src="/assets/config/definition.js"></script>
+    <script src="/assets/config/route.js"></script>
+    <script>
+        app.controller('myCtrl', function($scope) {
+            $scope.calc = "John";
+        });
+    </script>
+
     </body>
+
 </html>
