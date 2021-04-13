@@ -12,8 +12,21 @@
         font-size: 18px;
         height: 500px;
     }
+    .black-box{
+        display: block;
+        width: 95%;
+        background-color: black;
+        color: green;
+        border: none;
+        resize: none;
+        font-size: 18px;
+        height: 700px;
+    }
+    .black-box .p {
+        font-size: 15px;
+    }
 </style>
-<div class="container mt-5">
+<div class="container mt-5 mb-5 pb-5">
     <div class="row">
         <div class="col mx-auto">
             <ol class="breadcrumb">
@@ -26,26 +39,29 @@
             <p>Cette page vous permet de tester les différents VERB HTTP et de voir les headers et reponses des différents VERBS.</p>
 
             <div class="col mx-auto">
-
-                <button type="button" class="btn btn-secondary">GET</button>
-                <button type="button" class="btn btn-secondary">POST</button>
-                <button type="button" class="btn btn-secondary">HEAD</button>
-                <button type="button" class="btn btn-secondary">PUT</button>
-                <button type="button" class="btn btn-secondary">DELETE</button>
-                <button type="button" class="btn btn-secondary">CONNECT</button>
-                <button type="button" class="btn btn-secondary">OPTIONS</button>
-                <button type="button" class="btn btn-secondary">TRACE</button>
-                <button type="button" class="btn btn-secondary">PATCH</button>
+                <button type="button" class="btn btn-secondary ml-2" ng-repeat="verb in verbs" ng-click="launchAjax()">//verb//</button>
             </div>
 
-            <div class="row mt-5">
+            <p class="mt-5" ng-if="method == 'GET'">La méthode HTTP GET demande une représentation de la ressource spécifiée. Les requêtes GET doivent uniquement être utilisées afin de récupérer des données.</p>
+            <p class="mt-5" ng-if="method == 'POST'">POST est utilisé pour envoyer des données à un serveur afin de créer/mettre à jour une ressource.</p>
+            <p class="mt-5" ng-if="method == 'PUT'">La méthode HTTP PUT crée une nouvelle ressource ou remplace une représentation de la ressource ciblée par le contenu de la requête.</p>
+            <p class="mt-5" ng-if="method == 'DELETE'">La méthode HTTP DELETE supprime la ressource indiquée.</p>
+            <p class="mt-5" ng-if="method == 'OPTIONS'">La méthode HTTP OPTIONS est utilisée pour décrire les options de communication pour la ressource ciblée. Le client peut renseigner une URL spécifique pour la méthode OPTIONS, ou une astérisque (*) pour interroger le serveur dans sa globalité.</p>
+            <p class="mt-5" ng-if="method == 'PATCH'">La méthode PATCH d'une requête HTTP applique des modifications partielles à une ressource.</p>
+            <p class="mt-5" ng-if="method == 'COPY'">La méthode COPY crée un double de la ressource source identifiée par l'URI de la demande, dans la ressource de destination identifiée par l'URI de l'en-tête de destination. </p>
+
+            <div class="row mt-3">
                 <div class="col-md">
-                    <h4>Request</h4><hr>
-                    <textarea rows="30" disabled="true">dscsd</textarea>
+                    <h4>Request // method ? '- ' + method : '' //</h4><hr>
+                    <div rows="30" id="request" class="black-box p-2" disabled="true">
+                        <p ng-repeat="(key, value) in request_val"> <b>//key//</b> : //value// </p>
+                    </div>
                 </div>
                 <div class="col-md">
-                    <h4>Response</h4><hr>
-                    <textarea rows="30" disabled="true">csdcsdc</textarea>
+                    <h4>Response </h4><hr>
+                    <div rows="30" id="response" class="black-box p-2" disabled="true">
+                        <p ng-repeat="(key, value) in response_val"> <b>//key//</b> : //value// </p>
+                    </div>
                 </div>
             </div>
 

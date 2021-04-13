@@ -5,7 +5,12 @@ app.config(['$routeProvider',
                 templateUrl : "/assets/templates/home.html"
             })
             .when("/verb", {
-                templateUrl : "/assets/templates/verbs.html"
+                templateUrl : "/assets/templates/verbs.html",
+                controller : "verbsCtrl"
+            })
+            .when("/api", {
+                templateUrl : "/assets/templates/api.html",
+                controller : "apiCtrl"
             })
             .otherwise('/verb');
     }
