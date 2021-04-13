@@ -9,7 +9,7 @@ app.controller("verbsCtrl", function ($scope, $http) {
         $scope.method = this.verb;
         $http({
             method : this.verb,
-            url : "http://localhost:8000/test"
+            url : "/test"
         }).then(function mySuccess(response) {
 
             $scope.request_val = response.data;
