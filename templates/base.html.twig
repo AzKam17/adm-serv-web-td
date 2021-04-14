@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Web App - Administration Serveur Web</title>
         <link rel="stylesheet" href="/assets/css/bootstrap.css">
         <script src="/assets/js/angular.js"></script>
@@ -13,6 +14,7 @@
         <script src="/assets/config/route.js"></script>
         <script src="/assets/js-controllers/verbsController.js"></script>
         <script src="/assets/js-controllers/apiController.js"></script>
+        <script src="/assets/js-controllers/blogController.js"></script>
         <script>
             app.controller('myCtrl', function($scope) {
                 $scope.lien = "{{ path('home')|escape('js') }}";
@@ -29,6 +31,9 @@
                 position: absolute;
                 bottom: 0;
                 width: 100%;
+            }
+            .home_link:hover{
+                text-transform: none !important;
             }
         </style>
         {% block stylesheets %}{% endblock %}
@@ -54,6 +59,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#!api">Test API Rest</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#!blog">Blog</a>
                 </li>
             </ul>
 

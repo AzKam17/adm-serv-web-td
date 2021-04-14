@@ -12,6 +12,10 @@ app.config(['$routeProvider',
                 templateUrl : "/assets/templates/api.html",
                 controller : "apiCtrl"
             })
+            .when("/blog", {
+                templateUrl : "/assets/templates/blog.html",
+                controller : "blogCtrl"
+            })
             .otherwise('/verb');
     }
 ]);

@@ -1,0 +1,109 @@
+<style>
+    .inc-hover{
+        box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+        transition: all 0.3s ease-in-out;
+    }
+    .inc-hover::after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        border-radius: 5px;
+        //box-shadow: 12px 12px 2px 1px  rgba(0,0,0,0.3);
+        transition: opacity 0.3s ease-in-out;
+    }
+    .inc-hover:hover {
+        transform: scale(1.2, 1.2);
+    }
+    .inc-hover::after  {
+        opacity: 1;
+    }
+    .blog-item{
+        height: max-content;
+        position: absolute;
+    }
+</style>
+<div class="container mt-5 mb-5 pb-5">
+    <div class="row">
+        <div class="col mx-auto">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#!" >Accueil</a></li>
+                <li class="breadcrumb-item active">📖 Mon Blog</li>
+                <li class="ml-auto">
+                    <a href="#!" class="home_link" style="color: white">🏠 Revenir à l'accueil</a>
+                </li>
+            </ol>
+
+            <div class="row mb-5" style="height: 1500px;">
+                <div class="col">
+                    <h1>Articles de blog</h1>
+                    <hr style="background-color: #4e5d6c">
+                    <div class="col blog-post" style="background-color: #1b1b1b; height: 500px; overflow: hidden;">
+                        <div id="blog-post" class="row blog-item h-100">
+                            <div class="col p-0" style="background-color: orange; height: 100%;">
+                                <img src="https://picsum.photos/1000/1000" class="img-fluid inc-hover" alt="">
+                            </div>
+                            <div class="col mw-100 mr-3 pb-4 pl-3" style="background-color: #4e5d6c;">
+                                <h2 class="mt-4 ml-4 mb-1">Title</h2>
+                                <hr style="background-color: #4e5d6c">
+                                <p class="text-justify p-2">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sed enim id purus rhoncus consequat.
+                                    Vivamus imperdiet tortor sit amet viverra egestas. Fusce augue nibh, venenatis dignissim consectetur id, fermentum ac risus.
+                                    Curabitur sed varius lorem, vel interdum massa. Pellentesque sed magna vitae tortor gravida auctor et ut velit.</p>
+                                <button type="button" class="btn btn-info w-75 m-auto position-absolute fixed-bottom inc-hover" style="margin-bottom: 3rem !important;">Lire la suite</button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col blog-post mt-3" style="background-color: #1b1b1b; height: 500px; overflow: hidden;">
+                        <div id="blog-post" class="row blog-item h-100">
+                            <div class="col p-0" style="background-color: orange; height: 100%;">
+                                <img src="https://picsum.photos/1000/1000" class="img-fluid inc-hover" alt="">
+                            </div>
+                            <div class="col mw-100 mr-3 pb-4 pl-3" style="background-color: #4e5d6c;">
+                                <h2 class="mt-4 ml-4 mb-1">Title</h2>
+                                <hr style="background-color: #4e5d6c">
+                                <p class="text-justify p-2">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sed enim id purus rhoncus consequat.
+                                    Vivamus imperdiet tortor sit amet viverra egestas. Fusce augue nibh, venenatis dignissim consectetur id, fermentum ac risus.
+                                    Curabitur sed varius lorem, vel interdum massa. Pellentesque sed magna vitae tortor gravida auctor et ut velit.</p>
+                                <button type="button" class="btn btn-info w-75 m-auto position-absolute fixed-bottom inc-hover" style="margin-bottom: 3rem !important;">Lire la suite</button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col blog-post mt-3" style="background-color: #1b1b1b; height: 500px; overflow: hidden;">
+                        <div id="blog-post" class="row blog-item h-100">
+                            <div class="col p-0" style="background-color: orange; height: 100%;">
+                                <img src="https://picsum.photos/1000/1000" class="img-fluid inc-hover" alt="">
+                            </div>
+                            <div class="col mw-100 mr-3 pb-4 pl-3" style="background-color: #4e5d6c;">
+                                <h2 class="mt-4 ml-4 mb-1">Title</h2>
+                                <hr style="background-color: #4e5d6c">
+                                <p class="text-justify p-2">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sed enim id purus rhoncus consequat.
+                                    Vivamus imperdiet tortor sit amet viverra egestas. Fusce augue nibh, venenatis dignissim consectetur id, fermentum ac risus.
+                                    Curabitur sed varius lorem, vel interdum massa. Pellentesque sed magna vitae tortor gravida auctor et ut velit.</p>
+                                <button type="button" class="btn btn-info w-75 m-auto position-absolute fixed-bottom inc-hover" style="margin-bottom: 3rem !important;">Lire la suite</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!--<div class="row" style="height: 1500px;">
+                <div class="col-7" style="background-color: blue">
+
+                </div>
+                <div class="col-4 offset-1" style="background-color: black">
+
+                </div>
+            </div>-->
+
+
+        </div>
+    </div>
+</div>
