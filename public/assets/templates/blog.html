@@ -52,8 +52,8 @@
                     <div ng-repeat="article in articles" ng-class="{'mt-5': !$first}" class="col blog-post" style="background-color: #1b1b1b; height: 500px; overflow: hidden;">
                         <div id="blog-post" class="row blog-item h-100">
                             <div class="col-lg-6 p-0" style="background-color: orange; height: 100%;">
-                                <h3 class="bottom-left w-75 d-block d-md-block d-lg-none">//article.title//</h3>
-                                <img src="//article.photo//" class="img-fluid inc-hover" style="object-fit: cover; width: 100%; height: 100%" alt="">
+                                <h3 class="bottom-left w-75 d-block d-md-block d-lg-none" ng-click="openPost(article.link)">//article.title//</h3>
+                                <img src="//article.photo//" class="img-fluid inc-hover" ng-click="openPost(article.link)" style="object-fit: cover; width: 100%; height: 100%" alt="">
                             </div>
                             <div class="col mw-100 mr-3 pb-4 pl-3 d-none d-lg-block" style="background-color: #4e5d6c;">
                                 <h2 class="mt-4 ml-4 mb-1">//article.title//</h2>

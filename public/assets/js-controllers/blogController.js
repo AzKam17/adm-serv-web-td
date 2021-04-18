@@ -9,13 +9,17 @@ app
             //alert($route.current.templateUrl);
         }
     })
-    .controller("blogSingleCtrl", function ($log, $location, $rootScope, $scope, $routeParams) {
+    .controller("blogSingleCtrl", function ($sce, $log, $location, $rootScope, $scope, $routeParams) {
         //var rootElement = document.documentElement;
         let returnBlog = true;
         $scope.article = null;
+        //$log.info($sce);
         for (let i = $rootScope.articles.length - 1; i >= 0; i--) {
             if($rootScope.articles[i]['link'] === $routeParams.title){
                 $scope.article = $rootScope.articles[i];
+                for(let j = $scope.article.length - 1; j>=0; j--){
+                    $scope.article["text"][j]["e"] = $sce.trustAsHtml($scope.article["text"][j]["e"]);
+                }
                 returnBlog = false;
                 break;
             }

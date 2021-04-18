@@ -25,7 +25,7 @@
                     <h1>//article.title//</h1>
                     <img src="//article.photo//" alt="" class="blog-item-img" >
                     <hr style="background-color: #4e5d6c">
-                    <p ng-repeat="t in article.text" ng-class="{'identation': $first}" style="text-align: justify;">//t.e//</p>
+                    <p ng-repeat="t in article.text" ng-class="{'identation': $first}" style="text-align: justify;" ng-bind-html="t.e"></p>
                 </div>
                 <!--<div class="col" style="background-color: orange; width: 1500px;"></div>-->
             </div>

@@ -1,2 +1,8 @@
-var app = angular.module('myApp', ["ngRoute"]);
-    app.config(function($interpolateProvider){ $interpolateProvider.startSymbol('//').endSymbol('//'); });
+var app = angular
+    .module('myApp',
+        [
+            "ngRoute",
+            "ngSanitize"
+        ]
+    )
+    .config(function($interpolateProvider){ $interpolateProvider.startSymbol('//').endSymbol('//'); });
