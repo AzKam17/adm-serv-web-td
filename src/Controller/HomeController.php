@@ -16,7 +16,7 @@ class HomeController extends AbstractController
      */
     public function index(Request $request): Response
     {
-        dump($request);
+        //dump($request);
 
         $res = '';
         foreach ($request->headers as $key => $value){
