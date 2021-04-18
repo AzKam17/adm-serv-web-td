@@ -16,9 +16,14 @@
         <script src="/assets/js-controllers/apiController.js"></script>
         <script src="/assets/js-controllers/blogController.js"></script>
         <script>
-            app.controller('myCtrl', function($scope) {
+            app.controller('myCtrl', function($rootScope, $http, $scope) {
                 $scope.lien = "{{ path('home')|escape('js') }}";
-                console.log($scope.lien);
+                //console.log($scope.lien);
+                $http.get("/assets/json/blog_1604.json")
+                    .then(function(response) {
+                        $rootScope.articles = response.data;
+                        //console.log(response.data);
+                    });
             });
         </script>
         <style>

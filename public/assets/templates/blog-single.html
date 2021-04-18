@@ -1,0 +1,40 @@
+<style>
+    .blog-item-img{
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+    }
+    .identation{
+        text-indent: 3em;
+    }
+</style>
+<div class="container mt-5 mb-5 pb-1">
+    <div class="row">
+        <div class="col mx-auto">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#!" >Accueil</a></li>
+                <li class="breadcrumb-item active">📖 Blog - //article.title//</li>
+                <li class="ml-auto d-none d-md-block">
+                    <a href="#!blog" class="home_link mr-2" style="color:white !important;">📖 Revenir au blog</a>/
+                    <ng-include src="'/assets/templates/includes/breadcrumb-home.html'"></ng-include>
+                </li>
+            </ol>
+
+            <div class="row">
+                <div class="col">
+                    <h1>//article.title//</h1>
+                    <img src="//article.photo//" alt="" class="blog-item-img" >
+                    <hr style="background-color: #4e5d6c">
+                    <p ng-repeat="t in article.text" ng-class="{'identation': $first}" style="text-align: justify;">//t.e//</p>
+                </div>
+                <!--<div class="col" style="background-color: orange; width: 1500px;"></div>-->
+            </div>
+            <!--<div class="row mt-4 mb-4 d-lg-none">
+                <div class="col pt-3" style="background-color: white; height: 300px; border-top: #4e5d6c solid 10px; color: black">
+                    scdsc
+                </div>
+            </div>-->
+
+        </div>
+    </div>
+</div>
